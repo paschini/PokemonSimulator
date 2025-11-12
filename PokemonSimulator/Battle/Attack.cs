@@ -1,10 +1,12 @@
-﻿namespace PokemonSimulator
+﻿using PokemonSimulator.Simulator;
+
+namespace PokemonSimulator.Battle
 {
     internal class Attack
     {
-        string Name { get; set; }
-        ElementType Type { get; set; }
-        int BasePower { get; set; }
+        public string Name { get; set; }
+        public ElementType Type { get; set; }
+        public int BasePower { get; set; }
 
         public Attack(string name, ElementType type, int basePower)
         {

@@ -1,4 +1,6 @@
-﻿namespace PokemonSimulator
+﻿using PokemonSimulator.Battle;
+
+namespace PokemonSimulator.Creatures
 {
     internal class Squirtle : WaterPokemon
     {

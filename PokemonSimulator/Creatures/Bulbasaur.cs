@@ -1,10 +1,11 @@
-﻿using System;
+﻿using PokemonSimulator.Battle;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PokemonSimulator
+namespace PokemonSimulator.Creatures
 {
     internal class Bulbasaur : GrassPokemon
     {
