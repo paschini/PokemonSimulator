@@ -45,7 +45,7 @@ namespace PokemonSimulator.Creatures
         public void RandomAttack()
         {
             // Väljer en slumpmässig attack från listan och anropar dess .Use-metod.
-            Console.WriteLine($"\n{Name} attackerar...");
+            UI.ShowMessage($"\n{Name} attackerar...");
             var randomAttack = Attacks.OrderBy(_ => new Random().Next()).Take(1).ToArray()[0];
             randomAttack.Use(Level);
         }

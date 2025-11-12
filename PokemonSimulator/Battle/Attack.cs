@@ -15,8 +15,8 @@ namespace PokemonSimulator.Battle
             BasePower = basePower;
         }
 
-        public void Use(int level) { 
-            Console.WriteLine($"{Name} hit with a total power of {BasePower + level}! \n");
+        public void Use(int level) {
+            UI.ShowMessage($"{Name} hit with a total power of {BasePower + level}! \n");
         }
     }
 }

@@ -1,6 +1,4 @@
-﻿using PokemonSimulator.Battle;
-using PokemonSimulator.Creatures;
-using PokemonSimulator.Simulator;
+﻿using PokemonSimulator.Creatures;
 
 namespace PokemonSimulator
 {
@@ -12,9 +10,11 @@ namespace PokemonSimulator
 
             Console.WriteLine("\nVi kör Steve... Steve är en Charmander!");
             Pokemon Steve = new Charmander(7);
-            //Steve.Attacks[1].Use(2); // protected, funkar inte :)
-            Steve = Steve.Evolve();
-            Steve = Steve.Evolve();
+            //Steve.Attacks[1].Use(2); // protected, funkar inte :) bara en demo...
+            Steve = Steve.Evolve(); // Till Charmeleon
+            Steve = Steve.Evolve(); // Till Charizard
+
+            // konfirmation
             Console.WriteLine(Steve.Name);
             Console.WriteLine(Steve.GetType());
 
