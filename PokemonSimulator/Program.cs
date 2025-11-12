@@ -10,14 +10,29 @@ namespace PokemonSimulator
         {
             Console.WriteLine("Pokemon Simulator");
 
-            Attack flamethrower = new Attack("Flamethrower", ElementType.Fire, 12);
-            Attack ember = new Attack("Ember", ElementType.Fire, 6);
+            Console.WriteLine("\nVi kör Steve... Steve är en Charmander!");
+            Pokemon Steve = new Charmander(7);
+            //Steve.Attacks[1].Use(2); // protected, funkar inte :)
+            Steve = Steve.Evolve();
+            Steve = Steve.Evolve();
+            Console.WriteLine(Steve.Name);
+            Console.WriteLine(Steve.GetType());
 
-            Charmander Edgar = new Charmander(1, [flamethrower, ember]);
-            Edgar.Evolve();
+            Console.WriteLine("\nVi kör alla pokemon i beltet...");
+            List<Pokemon> Belt = new() {
+                    new Pikachu(1), // kan inte utveckla
+                    new Squirtle(5), 
+                    new Bulbasaur(2),
+                    new Charmander(3)
+            };
 
-            Charmander Steve = new Charmander(7);
-            Steve.Evolve();
+            for (var i = 0; i < Belt.Count; i++)
+            {
+                Belt[i].RandomAttack();
+                Belt[i].Attack();
+                Belt[i].RaiseLevel();
+                Belt[i] = Belt[i].Evolve();
+            }
         }
     }
 }

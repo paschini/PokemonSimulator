@@ -39,14 +39,13 @@ namespace PokemonSimulator.Simulator
         {
             var possibleAttacks = new List<Attack>();
 
-            var rng = new Random();
             var possibleMoves = AttacksByLevel
                 .Where(m => m.Key <= pokemonLevel)
                 .SelectMany(m => m.Value)
                 .Where(a => preferredTypes.Contains(a.Type))
                 .ToList();
 
-            return possibleMoves.OrderBy(_ => rng.Next()).Take(4).ToList();
+            return [.. possibleMoves.OrderBy(_ => new Random().Next()).Take(4)];
         }
     }
 }

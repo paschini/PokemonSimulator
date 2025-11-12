@@ -1,5 +1,6 @@
 ﻿using PokemonSimulator.Battle;
 using PokemonSimulator.Simulator;
+
 namespace PokemonSimulator.Creatures
 {
     internal class Charmander : FirePokemon, IEvolvable
@@ -8,21 +9,17 @@ namespace PokemonSimulator.Creatures
         {
         }
 
-        public Charmander(int level) : base("Charmander", level, [ElementType.Fire, ElementType.Normal]) 
+        public Charmander(int level) : base("Charmander", level, [ElementType.Normal]) 
         { 
         }
 
-        public void Evolve()
+        public new Pokemon Evolve()
         {
-            Pokemon Evolved = new Charmeleon(11);
+            Pokemon Evolved = new Charmeleon(Level + 10, Attacks); // denna pokemon håller attacker som finns
 
-            Console.WriteLine($"{Name} is evolving... Now it is a {Evolved.Name} and its level is {Evolved.Level}");
-            Console.WriteLine("New moveset: \n");
+            UI.EvolveFromTo(Name, Evolved.Name, Evolved.Level, Attacks);
 
-            foreach (Attack attack in Evolved.Attacks) 
-            {
-                Console.WriteLine($"{attack.Name} Type: {attack.Type} Base Power: {attack.BasePower}");
-            }
+            return Evolved;
         }
     }
 }
