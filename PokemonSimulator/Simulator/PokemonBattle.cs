@@ -11,20 +11,24 @@ namespace PokemonSimulator.Simulator
                     new Attack("Tackle", ElementType.Normal, 10),
                     new Attack("Bubble", ElementType.Water, 12),
                     new Attack("Ember", ElementType.Fire, 15),
-                    new Attack("Vine Whip", ElementType.Grass, 12)
+                    new Attack("Vine Whip", ElementType.Grass, 12),
+                    new Attack("Thunderbolt", ElementType.Electric, 15)
                 }
             },
             { 5, new() { 
                     new Attack("Fire Lash", ElementType.Fire, 15),
                     new Attack("Aqua Jet", ElementType.Water, 15),
                     new Attack("Leaf Blade", ElementType.Grass, 15),
+                    new Attack("Charm", ElementType.Fairy, 15),
                 } 
             },
             { 10, new() { 
                     new Attack("Smokescreen", ElementType.Normal, 5),
                     new Attack("Water Pulse", ElementType.Water, 20),
                     new Attack("Razor Leaf", ElementType.Grass, 18),
-                    new Attack("Flamethrower", ElementType.Fire, 20)
+                    new Attack("Flamethrower", ElementType.Fire, 20),
+                    new Attack("Double Shock", ElementType.Electric, 30),
+                    new Attack("Alluring VOice", ElementType.Fairy, 25)
                 } 
             },
             { 15, new() { 
