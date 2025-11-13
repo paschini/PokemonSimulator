@@ -77,7 +77,17 @@ namespace PokemonSimulator.Creatures
 
         public Pokemon Evolve()
         {
-            if (this is IEvolvable evolvable) return evolvable.Evolve();
+            if (this is IEvolvable evolvable)
+            {
+                try
+                {
+                    return evolvable.Evolve();
+                } catch
+                {
+                    Console.WriteLine($"{evolvable.GetType} måste implementera IEvolvable");
+                    throw;
+                }
+            }
             else
             {
                 UI.ShowMessage($"{Name} försöker utveckla men ingentin händer...");
