@@ -3,7 +3,7 @@ using PokemonSimulator.Simulator;
 
 namespace PokemonSimulator.Creatures
 {
-    internal class ElectricPokemon : Pokemon
+    internal abstract class ElectricPokemon : Pokemon
     {
         public ElectricPokemon(string name, int level, List<Attack> attacks) : base(name, level, ElementType.Electric, attacks)
         {

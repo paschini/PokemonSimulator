@@ -3,7 +3,7 @@ using PokemonSimulator.Simulator;
 
 namespace PokemonSimulator.Creatures
 {
-    internal class GrassPokemon : Pokemon
+    internal abstract class GrassPokemon : Pokemon
     {
         public GrassPokemon(string name, int level, List<Attack> attacks) : base(name, level, ElementType.Grass, attacks)
         {
