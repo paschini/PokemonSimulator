@@ -9,7 +9,8 @@ namespace PokemonSimulator
             Console.WriteLine("Pokemon Simulator");
 
             Console.WriteLine("\nVi kör alla pokemon i beltet...");
-            List<Pokemon> Belt = new() {
+            List<Pokemon> Belt = new() 
+            {
                     new Pikachu(34), 
                     new Squirtle(9), 
                     new Bulbasaur(14),

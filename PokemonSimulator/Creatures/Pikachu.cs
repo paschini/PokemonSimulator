@@ -8,6 +8,8 @@ namespace PokemonSimulator.Creatures
         private int _evolveAtLevel { get; set; } = 35;
         int IEvolvable._evolveAtLevel { get => _evolveAtLevel; set => _evolveAtLevel = value; }
 
+        public override int Health { get; protected set; } = 10;
+
         public Pikachu(int level, List<Attack> attacks) : base("Pikachu", level, attacks)
         {
         }

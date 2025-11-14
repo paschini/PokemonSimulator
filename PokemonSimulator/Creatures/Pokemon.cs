@@ -7,7 +7,7 @@ namespace PokemonSimulator.Creatures
     {
         public string Name { get; } = "Pokemon";
         public int Level { get; private set; } = 1;
-        public int Health { get; private set; } = 20;
+        public virtual int Health { get; protected set; } = 20;
         public ElementType Type { get; }
         protected List<Attack> Attacks { get; } = [];
 
