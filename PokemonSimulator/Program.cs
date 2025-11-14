@@ -25,8 +25,6 @@ namespace PokemonSimulator
                     new Bulbasaur(2),
                     new Charmander(3)
             };
-            
-            // TODO: vänta på läraren
 
 
             for (var i = 0; i < Belt.Count; i++)

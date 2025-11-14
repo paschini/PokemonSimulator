@@ -74,19 +74,14 @@ namespace PokemonSimulator.Creatures
         }
 
 
-
-        public Pokemon Evolve()
+        // vi kör internal som en "fusk"...
+        // med internal klagar compiler att IEvolvable måste implementera Evolve()
+        // och sen klagar det att det gömmar denna Evolve() ... så man MÅSTE implementera på ET RÄTT säät
+        internal Pokemon Evolve()
         {
             if (this is IEvolvable evolvable)
             {
-                try
-                {
-                    return evolvable.Evolve();
-                } catch
-                {
-                    Console.WriteLine($"{evolvable.GetType} måste implementera IEvolvable");
-                    throw;
-                }
+                return evolvable.Evolve();
             }
             else
             {
