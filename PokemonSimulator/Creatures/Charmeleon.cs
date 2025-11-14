@@ -7,6 +7,7 @@ namespace PokemonSimulator.Creatures
     {
         private int _evolveAtLevel { get; set; } = 50;
         int IEvolvable._evolveAtLevel { get => _evolveAtLevel; set => _evolveAtLevel = value; }
+
         public Charmeleon(int level, List<Attack> attacks) : base("Charmeleon", level, attacks)
         {
         }

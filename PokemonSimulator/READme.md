@@ -1,6 +1,6 @@
 # Pokemon Simulator
 
-## En exploration av C# OOP Kocepter
+## En exploration av C# OOP Koncepter
 
 Jag använder `inheritance`, `interface`, `abstract` och `sealed` klasserna.
 
@@ -78,3 +78,17 @@ List<Pokemon> Belt = new()
         new Raichu(60)
 };
 ```
+
+> [!IMPORTANT]  
+> Man ska vanligt bygga pokemon med:
+> ```c# Pokemon myPokemon = Pikachu(12); ```
+> Pokemon som byggs skulle ha bara attacker som passeras vid sin egen subtypes.
+>
+> Man kan också bygga pokemon med egen attacks som:
+> ```c# Pokemon myPokemon = Pikachu(12, attacks); ```
+> `attacks` måste vara `List<Attack>`
+> Om man passerar attacks till konstrktor då, det finns inget check att attacks passerar till pokemon som byggs!
+
+
+
+
