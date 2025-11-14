@@ -2,6 +2,7 @@
 {
     internal interface IEvolvable
     {
-       Pokemon Evolve();
+        int _evolveAtLevel { get; set; }
+        Pokemon Evolve();
     }
 }

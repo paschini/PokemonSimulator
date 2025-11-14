@@ -6,7 +6,8 @@ namespace PokemonSimulator.Creatures
     abstract class Pokemon
     {
         public string Name { get; } = "Pokemon";
-        public int Level { get; private set; }
+        public int Level { get; private set; } = 1;
+        public int Health { get; private set; } = 20;
         public ElementType Type { get; }
         protected List<Attack> Attacks { get; } = [];
 
@@ -42,22 +43,27 @@ namespace PokemonSimulator.Creatures
             Type = type;
         }
 
-        public void RandomAttack()
+        public int RandomAttack()
         {
             // Väljer en slumpmässig attack från listan och anropar dess .Use-metod.
             UI.ShowMessage($"\n{Name} attackerar...");
             var randomAttack = Attacks.OrderBy(_ => new Random().Next()).Take(1).ToArray()[0];
-            randomAttack.Use(Level);
+            return randomAttack.Use(Level);
         }
 
-        public void Attack() {
+        public int Attack() {
             // Låter användaren välja en attack från listan och anropar dess .Use-metod.
             UI.ShowMessage($"\n{Name} vill attackera...");
             Attack ChosenAttack = UI.ChooseAttack(Attacks);
-            ChosenAttack.Use(Level);
+            return ChosenAttack.Use(Level);
         }
 
-        public void RaiseLevel() {
+        public void ChangeHealth(int amount)
+        {
+            Health = amount;
+        }
+
+        public virtual Pokemon RaiseLevel() {
             // Ökar nivån på Pokémon och skriver ut att har levlat upp.
             if (Level >= 99) UI.ShowMessage($"{Name} är max nivå och kan inte växa mer.");
             else if (Level + 1 >= 99)
@@ -71,6 +77,12 @@ namespace PokemonSimulator.Creatures
                 Level++;
             }
 
+            return this;
+        }
+
+        public virtual void Speak()
+        {
+            UI.ShowMessage("Pruuu pruuu"); // default ljud
         }
 
 

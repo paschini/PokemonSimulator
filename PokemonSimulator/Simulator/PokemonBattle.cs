@@ -39,6 +39,24 @@ namespace PokemonSimulator.Simulator
             }
         };
 
+        public static readonly Dictionary<int, List<LegendaryAttack>> LegendaryAttackByLevel = CreateLegendaryAttacks();
+
+        private static Dictionary<int, List<LegendaryAttack>> CreateLegendaryAttacks()
+        {
+            var dict = new Dictionary<int, List<LegendaryAttack>>();
+
+            foreach (var (level, attacks) in AttacksByLevel)
+            {
+                var list = new List<LegendaryAttack>();
+                foreach (var attack in attacks)
+                    list.Add(new LegendaryAttack(attack));
+
+                dict[level + 10] = list;
+            }
+
+            return dict;
+        }
+
         public static List<Attack> GetPossibleAttacks(int pokemonLevel, List<ElementType> preferredTypes)
         {
             var possibleAttacks = new List<Attack>();
