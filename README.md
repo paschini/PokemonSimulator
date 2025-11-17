@@ -9,7 +9,7 @@ Koden vissas att barn klasserna skulle kunna hantera som bas:
 
 ```mermaid
 ---
-title: Pokemoner bygger som ...
+title: Pokemon klass diagram ...
 ---
 classDiagram
     note "From Duck till Zebra"
