@@ -2,7 +2,7 @@
 
 ## En exploration av C# OOP Koncepter
 
-Jag anv‰nder `inheritance`, `interface`, `abstract` och `sealed` klasserna.
+Jag anv√§nder `inheritance`, `interface`, `abstract` och `sealed` klasserna.
 
 Koden vissas att barn klasserna skulle kunna hantera som bas:
 
@@ -12,12 +12,11 @@ Koden vissas att barn klasserna skulle kunna hantera som bas:
 title: Pokemon klass diagram ...
 ---
 classDiagram
-    note "From Duck till Zebra"
     Pokemon --|> ElectricPokemon 
     ElectricPokemon --|> Pikachu
     IEvolve --|> Pikachu
     ElectricPokemon --|> Raichu
-    note for Pokemon "Abstract<br>Kan Attack, Speak, RaiseLevel, inte alla kan Evolve<br>Evolve() h‰r skull returnera this "
+    note for Pokemon "Abstract<br>Kan Attack, Speak, RaiseLevel, inte alla kan Evolve<br>Evolve() h√§r skull returnera this "
     note for ElectricPokemon "Abstract"
     note for Pikachu "Implementerar IEvolve"
     note for Raichu "Kan inte Evolve() "
@@ -66,7 +65,7 @@ classDiagram
 ```
 
 
-Och vi kan hanteras all Pokemon, de som implementerar IEvolve och de som gˆr det inte, som Pokemon bas klass:
+Och vi kan hanteras all Pokemon, de som implementerar IEvolve och de som g√∂r det inte, som Pokemon bas klass:
 
 ```C#
 List<Pokemon> Belt = new() 
@@ -84,10 +83,10 @@ List<Pokemon> Belt = new()
 > ```c# Pokemon myPokemon = Pikachu(12); ```
 > Pokemon som byggs skulle ha bara attacker som passeras vid sin egen subtypes.
 >
-> Man kan ocksÂ bygga pokemon med egen attacks som:
+> Man kan ocks√• bygga pokemon med egen attacks som:
 > ```c# Pokemon myPokemon = Pikachu(12, attacks); ```
-> `attacks` mÂste vara `List<Attack>`
-> Om man passerar attacks till konstrktor dÂ, det finns inget check att attacks passerar till pokemon som byggs!
+> `attacks` m√•ste vara `List<Attack>`
+> Om man passerar attacks till konstrktor d√•, det finns inget check att attacks passerar till pokemon som byggs!
 
 
 
